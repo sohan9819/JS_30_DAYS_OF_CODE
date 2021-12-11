@@ -141,8 +141,10 @@ const data = [
 //   obj[item]++;
 //   return obj;
 // }, {});
+
 const transportation = data.reduce((obj, item) => {
-  obj[item] ? obj[item++] : (obj[item] = 0);
+  !obj[item] ? (obj[item] = 0) : obj[item];
+  obj[item]++;
   return obj;
 }, {});
 
